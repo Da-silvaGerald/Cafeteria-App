@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="639.0" prefWidth="835.0" style="-fx-background-color: #F5F5DC;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafeteriaapp.resources.controllers.CartController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="835.0" spacing="15.0" style="-fx-background-color: #A52A2A;" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView style="-fx-cursor: hand;" fill="WHITE" glyphName="ARROW_LEFT" onMouseClicked="#handleBackToHome" size="20.0" />
+            <Label text="My Cart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="25.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #F5F5DC;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="cartItemsContainer" spacing="10.0" style="-fx-background-color: #F5F5DC;">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <VBox style="-fx-background-color: #F5F5DC; -fx-border-color: #ddd; -fx-border-width: 1 0 0 0;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0">
+               <children>
+                  <Label text="Total Cost:" textFill="#A52A2A">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="totalLabel" text="₦0.00" textFill="#A52A2A">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0">
+               <children>
+                  <Button fx:id="checkoutBtn" mnemonicParsing="false" onAction="#processCheckout" prefHeight="45.0" prefWidth="300.0" style="-fx-background-color: #A52A2A; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 25; -fx-cursor: hand;" text="Purchase &amp; Checkout" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
